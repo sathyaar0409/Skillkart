@@ -8,6 +8,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Reporter;
+
 public class WebActionUtil
 {
 	WebDriver driver;
@@ -53,11 +55,12 @@ public class WebActionUtil
 			catch(Exception e)
 			{
 				exp=e;
+				Reporter.log("Trying to Click Again:Count="+i);
 			}
 		}
 		if(exp!=null && i>3)
 		{
-			
+			Reporter.log(exp.toString(),true);
 		}
 		if(!isClicked)
 		{
@@ -146,7 +149,7 @@ public class WebActionUtil
 		}
 		catch(Exception e)
 		{
-			
+			Reporter.log(e.toString(), true);
 		}
 	}
 
